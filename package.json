@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/code",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "description": "[![Actions Status](https://github.com/denikeev/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/denikeev/frontend-project-lvl1/actions)",
   "bin": {
@@ -22,5 +22,10 @@
   "homepage": "https://github.com/denikeev/frontend-project-lvl1#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
   }
 }
