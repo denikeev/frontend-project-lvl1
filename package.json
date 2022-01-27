@@ -1,10 +1,11 @@
 {
   "name": "@hexlet/code",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "type": "module",
   "description": "[![Actions Status](https://github.com/denikeev/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/denikeev/frontend-project-lvl1/actions)",
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "main": "index.js",
   "scripts": {
