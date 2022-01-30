@@ -9,7 +9,7 @@ const getRandomOperand = (operands = ['+', '-', '*']) => {
 export const elems = [];
 export const answers = [];
 
-const fillColl = (num1, num2, operator) => {
+const fillColls = (num1, num2, operator) => {
   const combine = `${num1} ${operator} ${num2}`;
   elems.push(combine);
 
@@ -25,7 +25,7 @@ const fillColl = (num1, num2, operator) => {
 const questionAmount = 3;
 const getItems = () => {
   for (let i = 0; i < questionAmount; i += 1) {
-    fillColl(getRandomInt(0, 11), getRandomInt(0, 11), getRandomOperand());
+    fillColls(getRandomInt(0, 11), getRandomInt(0, 11), getRandomOperand());
   }
 };
 
