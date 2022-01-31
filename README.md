@@ -7,3 +7,4 @@
 [Step 6 recorded in asciinema](https://asciinema.org/a/dWCBZ2EsVdbwwhI1bPi1osbTW)  
 [Step 7 recorded in asciinema](https://asciinema.org/a/cz1qYzfSqP1tCy86GdZR422Jm)  
 [Step 8 recorded in asciinema](https://asciinema.org/a/gqlN8wsKjpdfUapVvJdVVqQIb)  
+[Step 9 recorded in asciinema](https://asciinema.org/a/9b0COrmttbRSN6qpFkD5lYqPU)
