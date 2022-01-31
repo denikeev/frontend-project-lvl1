@@ -4,5 +4,6 @@
 [![Actions Status](https://github.com/denikeev/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/denikeev/frontend-project-lvl1/actions)      
 
 [Step 5 recorded in asciinema](https://asciinema.org/a/j7m6Pd3zPaI4l5KsZj9Hj0qiz)  
-[Step 6 recorded in asciinema](https://asciinema.org/a/dWCBZ2EsVdbwwhI1bPi1osbTW)
-[Step 7 recorded in asciinema](https://asciinema.org/a/cz1qYzfSqP1tCy86GdZR422Jm)
+[Step 6 recorded in asciinema](https://asciinema.org/a/dWCBZ2EsVdbwwhI1bPi1osbTW)  
+[Step 7 recorded in asciinema](https://asciinema.org/a/cz1qYzfSqP1tCy86GdZR422Jm)  
+[Step 8 recorded in asciinema](https://asciinema.org/a/gqlN8wsKjpdfUapVvJdVVqQIb)  
