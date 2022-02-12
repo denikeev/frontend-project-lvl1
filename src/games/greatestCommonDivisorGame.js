@@ -1,6 +1,11 @@
 import getRandomInt from '../getRandomInt.js';
+import { questionAmount } from '../index.js';
 
 export const exercise = 'Find the greatest common divisor of given numbers.';
+export const QAColl = [];
+QAColl[0] = [];
+QAColl[1] = [];
+
 const gcd = (a, b) => {
   if (b === 0) {
     return a;
@@ -9,27 +14,15 @@ const gcd = (a, b) => {
   return gcd(b, a % b);
 };
 
-export const elems = [];
-export const answers = [];
-
-const fillColls = (num1, num2, operator) => {
+const fillColls = (num1, num2) => {
   const combine = `${num1} ${num2}`;
-  elems.push(combine);
+  QAColl[0].push(combine);
   let answer = '';
 
-  if (operator === '+') {
-    answer = gcd(num1, num2);
-    return answers.push(String(answer));
-  }
-  if (operator === '-') {
-    answer = gcd(num1, num2);
-    return answers.push(String(answer));
-  }
   answer = gcd(num1, num2);
-  return answers.push(String(answer));
+  return QAColl[1].push(String(answer));
 };
 
-const questionAmount = 3;
 const getItems = () => {
   for (let i = 0; i < questionAmount; i += 1) {
     fillColls(getRandomInt(1, 101), getRandomInt(1, 101));

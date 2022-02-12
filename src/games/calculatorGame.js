@@ -1,32 +1,40 @@
 import getRandomInt from '../getRandomInt.js';
 
 export const exercise = 'What is the result of the expression?';
-const getRandomOperand = (operands = ['+', '-', '*']) => {
-  const operandIndex = getRandomInt(0, operands.length);
-  return operands[operandIndex];
+
+const getRandomOperator = (operators = ['+', '-', '*']) => {
+  const operatorIndex = getRandomInt(0, operators.length);
+  return operators[operatorIndex];
 };
 
-export const elems = [];
-export const answers = [];
-
-const fillColls = (num1, num2, operator) => {
-  const combine = `${num1} ${operator} ${num2}`;
-  elems.push(combine);
-
-  if (operator === '+') {
-    return answers.push(String(num1 + num2));
+const calculate = (num1, num2, operator) => {
+  switch (operator) {
+  case '+':
+    return String((num1 + num2));
+  case '-':
+    return String(num1 - num2);
+  case '*':
+    return String(num1 * num2);
+  default:
+    return null;
   }
-  if (operator === '-') {
-    return answers.push(String(num1 - num2));
-  }
-  return answers.push(String(num1 * num2));
 };
 
-const questionAmount = 3;
-const getItems = () => {
+export const getQAColl = (questionAmount) => {
+  const QAColl = [];
+  QAColl[0] = [];
+  QAColl[1] = [];
+
   for (let i = 0; i < questionAmount; i += 1) {
-    fillColls(getRandomInt(0, 11), getRandomInt(0, 11), getRandomOperand());
-  }
-};
+    const num1 = getRandomInt(0, 11);
+    const num2 = getRandomInt(0, 11);
+    const operator = getRandomOperator();
 
-getItems();
+    const concatQuestion = `${num1} ${operator} ${num2}`;
+    QAColl[0].push(concatQuestion);
+    const getAnswer = calculate(num1, num2, operator);
+    QAColl[1].push(getAnswer);
+  }
+
+  return QAColl;
+};

@@ -1,7 +1,10 @@
 import getRandomInt from '../getRandomInt.js';
+import { questionAmount } from '../index.js';
 
 export const exercise = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const questionAmount = 3;
+export const QAColl = [];
+QAColl[0] = [];
+QAColl[1] = [];
 const isPrime = (int) => {
   if (int === 1) {
     return false;
@@ -15,13 +18,10 @@ const isPrime = (int) => {
   return true;
 };
 
-export const elems = [];
-export const answers = [];
-
 const fillColls = () => {
   const checkInteger = getRandomInt(0, 101);
-  elems.push(checkInteger);
-  return isPrime(checkInteger) ? answers.push('yes') : answers.push('no');
+  QAColl[0].push(checkInteger);
+  return isPrime(checkInteger) ? QAColl[1].push('yes') : QAColl[1].push('no');
 };
 
 const getItems = () => {

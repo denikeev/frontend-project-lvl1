@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { exercise, elems, answers } from '../src/games/prime.js';
-import index from '../src/index.js';
+import { exercise, QAColl } from '../src/games/primeGame.js';
+import { index } from '../src/index.js';
 
-index(exercise, elems, answers);
+index(exercise, QAColl);

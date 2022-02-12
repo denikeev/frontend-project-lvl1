@@ -1,8 +1,11 @@
 import getRandomInt from '../getRandomInt.js';
+import { questionAmount } from '../index.js';
 
 export const exercise = 'What number is missing in the progression?';
+export const QAColl = [];
+QAColl[0] = [];
+QAColl[1] = [];
 const progressionLength = 9;
-const questionAmount = 3;
 
 const getProgressionColl = () => {
   const getStartInt = (getRandomInt(1, 51));
@@ -19,16 +22,14 @@ const getProgressionColl = () => {
   return coll;
 };
 
-export const elems = [];
-export const answers = [];
 const fillColls = (coll) => {
   const hideInt = getRandomInt(0, progressionLength);
   const copyColl = coll;
 
-  answers.push(String(copyColl[hideInt]));
+  QAColl[1].push(String(copyColl[hideInt]));
   copyColl[hideInt] = '..';
   const collToString = copyColl.join(' ');
-  elems.push(collToString);
+  QAColl[0].push(collToString);
 };
 
 const getItems = () => {
