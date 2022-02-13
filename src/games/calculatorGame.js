@@ -9,21 +9,19 @@ const getRandomOperator = (operators = ['+', '-', '*']) => {
 
 const calculate = (num1, num2, operator) => {
   switch (operator) {
-  case '+':
-    return String((num1 + num2));
-  case '-':
-    return String(num1 - num2);
-  case '*':
-    return String(num1 * num2);
-  default:
-    return null;
+    case '+':
+      return String((num1 + num2));
+    case '-':
+      return String(num1 - num2);
+    case '*':
+      return String(num1 * num2);
+    default:
+      return null;
   }
 };
 
 export const getQAColl = (questionAmount) => {
   const QAColl = [];
-  // QAColl[0] = [];
-  // QAColl[1] = [];
 
   for (let i = 0; i < questionAmount; i += 1) {
     const num1 = getRandomInt(0, 11);
