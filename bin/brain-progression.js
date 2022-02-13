@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { exercise, QAColl } from '../src/games/arithmeticProgressionGame.js';
-import { index } from '../src/index.js';
+import { progression } from '../src/index.js';
 
-index(exercise, QAColl);
+progression();

@@ -22,18 +22,20 @@ const calculate = (num1, num2, operator) => {
 
 export const getQAColl = (questionAmount) => {
   const QAColl = [];
-  QAColl[0] = [];
-  QAColl[1] = [];
+  // QAColl[0] = [];
+  // QAColl[1] = [];
 
   for (let i = 0; i < questionAmount; i += 1) {
     const num1 = getRandomInt(0, 11);
     const num2 = getRandomInt(0, 11);
     const operator = getRandomOperator();
+    const QA = [];
 
     const concatQuestion = `${num1} ${operator} ${num2}`;
-    QAColl[0].push(concatQuestion);
+    QA[0] = concatQuestion;
     const getAnswer = calculate(num1, num2, operator);
-    QAColl[1].push(getAnswer);
+    QA[1] = getAnswer;
+    QAColl.push(QA);
   }
 
   return QAColl;

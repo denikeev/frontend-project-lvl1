@@ -1,12 +1,8 @@
 import getRandomInt from '../getRandomInt.js';
-import { questionAmount } from '../index.js';
 
 export const exercise = 'What number is missing in the progression?';
-export const QAColl = [];
-QAColl[0] = [];
-QAColl[1] = [];
-const progressionLength = 9;
 
+const progressionLength = 9;
 const getProgressionColl = () => {
   const getStartInt = (getRandomInt(1, 51));
   const getStepInt = (getRandomInt(1, 11));
@@ -22,20 +18,21 @@ const getProgressionColl = () => {
   return coll;
 };
 
-const fillColls = (coll) => {
-  const hideInt = getRandomInt(0, progressionLength);
-  const copyColl = coll;
+export const getQAColl = (questionAmount) => {
+  const QAColl = [];
 
-  QAColl[1].push(String(copyColl[hideInt]));
-  copyColl[hideInt] = '..';
-  const collToString = copyColl.join(' ');
-  QAColl[0].push(collToString);
-};
-
-const getItems = () => {
   for (let i = 0; i < questionAmount; i += 1) {
-    fillColls(getProgressionColl());
-  }
-};
+    const progressionColl = getProgressionColl();
+    const hideInt = getRandomInt(0, progressionLength);
+    const QA = [];
 
-getItems();
+    const getAnswer = String(progressionColl[hideInt]);
+    QA[1] = getAnswer;
+    progressionColl[hideInt] = '..';
+    const collToString = progressionColl.join(' ');
+    QA[0] = collToString;
+    QAColl.push(QA);
+  }
+
+  return QAColl;
+};
