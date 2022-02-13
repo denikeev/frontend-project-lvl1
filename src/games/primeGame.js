@@ -20,7 +20,7 @@ export const getQAColl = (questionAmount) => {
 
   for (let i = 0; i < questionAmount; i += 1) {
     const QA = [];
-    const randomInt = getRandomInt();
+    const randomInt = getRandomInt(1, 101);
     QA[0] = randomInt;
     const getAnswer = isPrime(randomInt) ? 'yes' : 'no';
     QA[1] = getAnswer;
