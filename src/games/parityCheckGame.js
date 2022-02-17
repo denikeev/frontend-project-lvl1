@@ -1,20 +1,23 @@
 import getRandomInt from '../getRandomInt.js';
+import { index, questionsCount } from '../index.js';
 
-export const exercise = 'Answer "yes" if the number is even, otherwise answer "no".';
+const exercise = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (number) => number % 2 === 0;
 
-export const getQAColl = (questionAmount) => {
-  const QAColl = [];
-
-  for (let i = 0; i < questionAmount; i += 1) {
-    const QA = [];
-    const randomInt = getRandomInt();
-    QA[0] = randomInt;
-    const getAnswer = isEven(randomInt) === true ? 'yes' : 'no';
-    QA[1] = getAnswer;
-    QAColl.push(QA);
+const getGameData = () => {
+  const gameData = [];
+  for (let i = 0; i < questionsCount; i += 1) {
+    const question = getRandomInt();
+    const answer = isEven(question) ? 'yes' : 'no';
+    gameData.push([question, answer]);
   }
 
-  return QAColl;
+  return gameData;
 };
+
+const runGameCheckParity = () => {
+  index(exercise, getGameData());
+};
+
+export default runGameCheckParity;

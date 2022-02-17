@@ -1,9 +1,10 @@
 import getRandomInt from '../getRandomInt.js';
+import { index, questionsCount } from '../index.js';
 
-export const exercise = 'What is the result of the expression?';
+const exercise = 'What is the result of the expression?';
 
 const getRandomOperator = (operators = ['+', '-', '*']) => {
-  const operatorIndex = getRandomInt(0, operators.length);
+  const operatorIndex = getRandomInt(0, operators.length - 1);
   return operators[operatorIndex];
 };
 
@@ -20,21 +21,22 @@ const calculate = (num1, num2, operator) => {
   }
 };
 
-export const getQAColl = (questionAmount) => {
-  const QAColl = [];
-
-  for (let i = 0; i < questionAmount; i += 1) {
-    const num1 = getRandomInt(0, 11);
-    const num2 = getRandomInt(0, 11);
+const getGameData = () => {
+  const gameData = [];
+  for (let i = 0; i < questionsCount; i += 1) {
+    const num1 = getRandomInt(0, 10);
+    const num2 = getRandomInt(0, 10);
     const operator = getRandomOperator();
-    const QA = [];
-
-    const concatQuestion = `${num1} ${operator} ${num2}`;
-    QA[0] = concatQuestion;
-    const getAnswer = calculate(num1, num2, operator);
-    QA[1] = getAnswer;
-    QAColl.push(QA);
+    const question = `${num1} ${operator} ${num2}`;
+    const answer = calculate(num1, num2, operator);
+    gameData.push([question, answer]);
   }
 
-  return QAColl;
+  return gameData;
 };
+
+const runGameCalc = () => {
+  index(exercise, getGameData());
+};
+
+export default runGameCalc;

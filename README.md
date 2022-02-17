@@ -48,8 +48,8 @@ brain-even
 ```
 
 ## View games
-[brain-even](https://asciinema.org/a/j7m6Pd3zPaI4l5KsZj9Hj0qiz)  
+[brain-even](https://asciinema.org/a/JfN2ZNzzjFmHK9CLa1V6Av2LC)  
 [brain-calc](https://asciinema.org/a/dWCBZ2EsVdbwwhI1bPi1osbTW)  
 [brain-gcd](https://asciinema.org/a/cz1qYzfSqP1tCy86GdZR422Jm)  
-[brain-progression](https://asciinema.org/a/gqlN8wsKjpdfUapVvJdVVqQIb)  
-[brain-prime](https://asciinema.org/a/9b0COrmttbRSN6qpFkD5lYqPU)
+[brain-progression](https://asciinema.org/a/BayTP3n3BGzzdKLPn9CSTtGcY)  
+[brain-prime](https://asciinema.org/a/MoPKogKzObugnYe3vJkAVfjqP)

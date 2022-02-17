@@ -1,38 +1,39 @@
 import getRandomInt from '../getRandomInt.js';
+import { index, questionsCount } from '../index.js';
 
-export const exercise = 'What number is missing in the progression?';
+const exercise = 'What number is missing in the progression?';
 
-const progressionLength = 9;
-const getProgressionColl = () => {
-  const getStartInt = (getRandomInt(1, 51));
-  const getStepInt = (getRandomInt(1, 11));
+const progressionLength = 8;
+const getProgression = () => {
+  const initialDigit = getRandomInt(1, 50);
+  const step = getRandomInt(1, 10);
+  const coll = [initialDigit];
 
-  const coll = [getStartInt];
-  let acc = getStartInt;
-
-  for (let i = 0; i < progressionLength; i += 1) {
-    acc += getStepInt;
-    coll.push(acc);
+  let sum = initialDigit;
+  for (let i = 0; i < progressionLength - 1; i += 1) {
+    sum += step;
+    coll.push(sum);
   }
 
   return coll;
 };
 
-export const getQAColl = (questionAmount) => {
-  const QAColl = [];
-
-  for (let i = 0; i < questionAmount; i += 1) {
-    const progressionColl = getProgressionColl();
-    const hideInt = getRandomInt(0, progressionLength);
-    const QA = [];
-
-    const getAnswer = String(progressionColl[hideInt]);
-    QA[1] = getAnswer;
-    progressionColl[hideInt] = '..';
-    const collToString = progressionColl.join(' ');
-    QA[0] = collToString;
-    QAColl.push(QA);
+const getGameData = () => {
+  const gameData = [];
+  for (let i = 0; i < questionsCount; i += 1) {
+    const progressionColl = getProgression();
+    const indexOfAnswer = getRandomInt(0, progressionLength - 1);
+    const answer = String(progressionColl[indexOfAnswer]);
+    progressionColl[indexOfAnswer] = '..';
+    const question = progressionColl.join(' ');
+    gameData.push([question, answer]);
   }
 
-  return QAColl;
+  return gameData;
 };
+
+const runGameProgression = () => {
+  index(exercise, getGameData());
+};
+
+export default runGameProgression;

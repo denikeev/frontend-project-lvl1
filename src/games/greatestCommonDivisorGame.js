@@ -1,29 +1,31 @@
 import getRandomInt from '../getRandomInt.js';
+import { index, questionsCount } from '../index.js';
 
-export const exercise = 'Find the greatest common divisor of given numbers.';
+const exercise = 'Find the greatest common divisor of given numbers.';
 
-const gcd = (a, b) => {
+const getGreatestCommonDivisor = (a, b) => {
   if (b === 0) {
     return a;
   }
 
-  return gcd(b, a % b);
+  return getGreatestCommonDivisor(b, a % b);
 };
 
-export const getQAColl = (questionAmount) => {
-  const QAColl = [];
-
-  for (let i = 0; i < questionAmount; i += 1) {
-    const num1 = getRandomInt(1, 101);
-    const num2 = getRandomInt(1, 101);
-    const QA = [];
-
-    const concatQuestion = `${num1} ${num2}`;
-    QA[0] = concatQuestion;
-    const getAnswer = String(gcd(num1, num2));
-    QA[1] = getAnswer;
-    QAColl.push(QA);
+const getGameData = () => {
+  const gameData = [];
+  for (let i = 0; i < questionsCount; i += 1) {
+    const num1 = getRandomInt(1, 50);
+    const num2 = getRandomInt(1, 50);
+    const question = `${num1} ${num2}`;
+    const answer = String(getGreatestCommonDivisor(num1, num2));
+    gameData.push([question, answer]);
   }
 
-  return QAColl;
+  return gameData;
 };
+
+const runGameGreatestCommonDivisor = () => {
+  index(exercise, getGameData());
+};
+
+export default runGameGreatestCommonDivisor;
